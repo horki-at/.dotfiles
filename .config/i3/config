@@ -1,0 +1,122 @@
+# Core
+set $mod Mod4
+
+# Appearance
+gaps inner 5px
+default_border none
+font pango:Terminus Bold  14px
+
+# Autostart
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
+exec_always --no-startup-id dunst
+exec_always --no-startup-id autorandr --change
+exec_always --no-startup-id feh --bg-fill ~/docs/media/pictures/backgrounds/game.png
+exec_always --no-startup-id emacs --daemon
+
+# Misc
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# Audio setup (AI did these)
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute        exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute     exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym $mod+shift+a exec pavucontrol
+for_window [class="Pavucontrol"] floating enable
+
+# Keybindings
+bindsym $mod+Return exec kitty --listen-on unix:/tmp/mykitty
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec "rofi -modi drun,run -show drun"
+
+bindsym $mod+Ctrl+b exec --no-startup-id "dsi.sh battery"
+bindsym $mod+Ctrl+a exec --no-startup-id "dsi.sh audio"
+bindsym $mod+Ctrl+w exec --no-startup-id "dsi.sh wifi"
+bindsym $mod+Ctrl+t exec --no-startup-id "dsi.sh time"
+
+bindsym Print exec --no-startup-id "scrot -fs - | xclip -selection clipboard -target image/png"
+
+# Moving
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle 
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+workspace 1 output DP-1-0 eDP
+workspace 2 output DP-1-0 eDP
+workspace 3 output DP-1-0 eDP
+workspace 4 output DP-1-0 eDP
+workspace 5 output DP-1-0 eDP
+workspace 6 output DP-1-0 eDP
+workspace 7 output DP-1-0 eDP
+workspace 8 output DP-1-0 eDP
+workspace 9 output DP-1-0 eDP
+workspace 10 output eDP
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+     bindsym Left resize shrink width 10 px or 10 ppt
+     bindsym Down resize grow height 10 px or 10 ppt
+     bindsym Up resize shrink height 10 px or 10 ppt
+     bindsym Right resize grow width 10 px or 10 ppt
+
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+     bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"

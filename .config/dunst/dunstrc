@@ -1,0 +1,33 @@
+[global]
+    origin = center
+    width = (240, 520)
+    height = 130
+    alignment = center
+
+    font = JetBrainsMono Nerd Font 13
+    format = "<b>%s</b>  %b" 
+    frame_width = 0
+    corner_radius = 0
+    padding = 14
+    horizontal_padding = 24
+    transparency = 12  
+
+    progress_bar = true
+    progress_bar_height = 4
+
+[urgency_low]
+    background = "#0a0a0a"
+    foreground = "#555555"
+    timeout = 3
+
+[urgency_normal]
+    background = "#0a0a0a"
+    foreground = "#b8b8b8"
+    highlight  = "#b8b8b8"
+    timeout = 2
+
+[urgency_critical]
+    background = "#0a0a0a"
+    foreground = "#e05a4a"
+    highlight  = "#e05a4a"
+    timeout = 02

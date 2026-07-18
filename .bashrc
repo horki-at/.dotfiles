@@ -2,6 +2,7 @@ alias ll='ls -la --color'
 alias ls='ls --color'
 alias grep='grep --color'
 alias c='xclip -selection clipboard'
+alias e='emacsclient -c -a ""'
 
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:/home/horki/.nimble/bin"

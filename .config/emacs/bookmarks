@@ -2,7 +2,13 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("kitty"
+(("i3"
+ (filename . "~/.dotfiles/.config/i3/config")
+ (front-context-string . "g\n\n# Misc\nfloati")
+ (rear-context-string . "unds/skeleton.pn")
+ (position . 359)
+ (last-modified 27227 49329 968846 984000))
+("kitty"
  (filename . "~/.dotfiles/.config/kitty/kitty.conf")
  (front-context-string . "# Background set")
  (rear-context-string)
