@@ -1,0 +1,23 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("kitty"
+ (filename . "~/.dotfiles/.config/kitty/kitty.conf")
+ (front-context-string . "# Background set")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 27226 35889 676929 180000))
+("emacs"
+ (filename . "~/.dotfiles/.config/emacs/init.el")
+ (front-context-string . ";;; init.el --- ")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 27226 35885 578829 852000))
+("dots"
+ (filename . "~/.dotfiles/")
+ (front-context-string)
+ (rear-context-string . "96 Jul 17 22:07 ")
+ (position . 169)
+ (last-modified 27226 35880 734587 693000))
+)
