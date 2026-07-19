@@ -8,8 +8,6 @@ export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:/home/horki/.nimble/bin"
 export PATH="$PATH:/home/horki/repos/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin"
 
-. "$HOME/.local/bin/env"
-
 eval "$(oh-my-posh init bash --config ~/.config/omp/half-life.json)"
 
 export NVM_DIR="$HOME/.config/nvm"

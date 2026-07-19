@@ -2,7 +2,13 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("i3"
+(("bashrc"
+ (filename . "~/.dotfiles/.bashrc")
+ (front-context-string . "\"\"'\n\nexport PATH")
+ (rear-context-string . "acsclient -c -a ")
+ (position . 139)
+ (last-modified 27227 55499 12230 904000))
+("i3"
  (filename . "~/.dotfiles/.config/i3/config")
  (front-context-string . "g\n\n# Misc\nfloati")
  (rear-context-string . "unds/skeleton.pn")
